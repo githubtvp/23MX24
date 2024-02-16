@@ -7,17 +7,20 @@ public class Main {
     private static final String USER = "root";
     private static final String PWD = "rootmysql";
     private static DBData DB;
+
     public static void main(String[] args) {
-       // InsertRec();
-        getResultSet();
+
+        InsertRec();
+        getRecords();
         updateRec();
-        prn();
-        getResultSet();
+        pr();
+        //   getRecords();
         deleteRec();
-        prn();
-        getResultSet();
+        pr();
+        getRecords();
     }
-    static void getResultSet() {
+
+    static void getRecords() {
         DB = new DBData();
         ArrayList<StudRec> st = new ArrayList<StudRec>();
         int i = 0;
@@ -34,47 +37,43 @@ public class Main {
         }
     }
 
-    static void InsertRec()
-    {
+    static void InsertRec() {
+        String name = "Priya";
+        int age = 23;
+        double marks = 90.09;
         DB = new DBData();
-        try{
-            DB.insertRec();
-        }
-        catch(Exception e)
-        {
-            pr(e.getMessage());
-        }
-    }
-    static void updateRec()
-    {
-        DB = new DBData();
-        try{
-            DB.updateRec();
-        }
-        catch(Exception e)
-        {
+        try {
+            DB.insertRec2(name, age, marks);
+        } catch (Exception e) {
             pr(e.getMessage());
         }
     }
 
-    static void deleteRec()
-    {
+    static void updateRec() {
+        int id = 3;
+        double marks = 65.09;
         DB = new DBData();
-        try{
-            DB.deleteRec();
-        }
-        catch(Exception e)
-        {
+        try {
+            DB.updateRec(id, marks);
+        } catch (Exception e) {
             pr(e.getMessage());
         }
     }
-    static public void pr(String msg)
-    {
+
+    static void deleteRec() {
+        int[] stId = {5, 6,7};
+        DB = new DBData();
+        try {
+            DB.deleteRec(stId);
+        } catch (Exception e) {
+            pr(e.getMessage());
+        }
+    }
+
+    static public void pr(String msg) {
         System.out.print(msg);
     }
-
-    static public void prn()
-    {
+    static public void pr() {
         pr("\n");
     }
 }

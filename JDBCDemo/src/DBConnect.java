@@ -4,13 +4,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.*;
 class DBConnect {
-
         private static final String DRVR = "com.mysql.cj.jdbc.Driver";
         private static final String URL = "jdbc:mysql://localhost:3306/mydb";
         private static final String USER  = "root";
         private static final String PWD = "rootmysql";
 
         public Connection conn;
+        public PreparedStatement pStmt;
         public Statement stmt;
         public DBConnect()
         {
