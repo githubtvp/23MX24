@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management System</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Book Management System</h1>
+        <form id="searchForm" action="/search" method="post">
+            <label for="bookTitle">Enter Book Title:</label>
+            <input type="text" id="bookTitle" name="bookTitle" required>
+            <button type="submit">Search</button>
+        </form>
+        <div id="searchResult">
+            <!-- Search results will be displayed here -->
+        </div>
+    </div>
+</body>
+</html>
