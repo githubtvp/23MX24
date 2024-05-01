@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-NewWebService_add" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/NewWebService_add"/>
+        <property name="wsdl-NewWebService_add" location="xml-resources/web-service-references/NewWebService_add/wsdl/localhost_42939/test_ws/NewWebService_add.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/NewWebService_add" destdir="${build.generated.dir}/jax-wsCache/NewWebService_add" wsdl="${wsdl-NewWebService_add}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:42939/test_ws/NewWebService_add?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-NewWebService_add}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/NewWebService_add"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/NewWebService_add">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-NewWebService_add" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/NewWebService_add"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-NewWebService_add"/>
+</project>
